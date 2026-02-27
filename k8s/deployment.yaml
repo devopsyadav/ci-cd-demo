@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mohit-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mohit-app
+  template:
+    metadata:
+      labels:
+        app: mohit-app
+    spec:
+      containers:
+      - name: mohit-container
+        image: devopsyadav/mohit-app:v2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
